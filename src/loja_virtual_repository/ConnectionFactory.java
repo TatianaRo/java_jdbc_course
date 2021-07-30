@@ -10,12 +10,12 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public class ConnectionFactory {
 	
-	//Aqui na connectionFactory, local pra centralizar a conex„o com o bd, foi criado um datasource
-	//que È uma interface para lidar com os pools de conex„o.
-	//O pool de conex„o reserva um n˙mero de conexıes aberta prÈ estabelidades para casos onde haja muitas requisiÁıes.
-    //Ao chegar no n˙mero m·ximo de conexıes abertas a prÛxima requisiÁ„o aguardaa prÛxima conex„o do pool disponÌvel. O que evita a abertura de conexıes ao banco a todo momento em grandes sistemas.
+	//Aqui na connectionFactory, local pra centralizar a conex√£o com o bd, foi criado um datasource
+	//que √© uma interface para lidar com os pools de conex√£o.
+	//O pool de conex√£o reserva um n√∫mero de conex√µes aberta pr√© estabelidades para casos onde haja muitas requisi√ß√µes.
+    //Ao chegar no n√∫mero m√°ximo de conex√µes abertas a pr√≥xima requisi√ß√£o aguardaa pr√≥xima conex√£o do pool dispon√≠vel. O que evita a abertura de conex√µes ao banco a todo momento em grandes sistemas.
 	
-	//Aqui para criar o pool foi necess·rio utilizar a biblioteca c3p0 que fornce o ComboPooledDataSource, mas existem outras.
+	//Aqui para criar o pool foi necess√°rio utilizar a biblioteca c3p0 que fornce o ComboPooledDataSource, mas existem outras.
 	private DataSource dataSourse; 
 	
 	public ConnectionFactory(){
@@ -23,9 +23,9 @@ public class ConnectionFactory {
 		ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();
 		comboPooledDataSource.setJdbcUrl("jdbc:mysql://localhost/loja_virtual?useTimezone=true&serverTimezone=UTC");
 		comboPooledDataSource.setUser("root");
-		comboPooledDataSource.setPassword("tatiana1234");
+		comboPooledDataSource.setPassword("");
 		
-		//define n˙mero m·ximo de conexıes abertas
+		//define n√∫mero m√°ximo de conex√µes abertas
 		comboPooledDataSource.setMaxPoolSize(10);
 		
 		this.dataSourse = comboPooledDataSource;
